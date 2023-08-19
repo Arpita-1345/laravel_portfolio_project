@@ -80,6 +80,7 @@ class EducationPagesController extends Controller
      {
     
         $education = Education::find($id);
+        dd($education);
          return view('pages.education.edit', compact('education'));
      }
 

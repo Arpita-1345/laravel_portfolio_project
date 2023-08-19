@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('sub_title');
+            $table->string('name');
+            $table->string('status');
             $table->longText('description');
             $table->string('bc_img');
             $table->integer('years');

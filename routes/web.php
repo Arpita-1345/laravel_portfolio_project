@@ -23,7 +23,7 @@ use PhpParser\Node\Expr\List_;
 //     return view('pages.index');
 // });
 // Route::get('/', [PagesController::class,'index'])->name('home');
-Route::get('/', [PagesController::class,'index'])->name('home');
+Route::get('/', [PagesController::class,'index'])->name('welcome');
 Route::get('/admin/dashboard',[MainPagesController::class, 'dashboard'])->name('admin.dashboard');
 Route::get('/admin/main',[MainPagesController::class, 'index'])->name('admin.main');
 Route::post('/update/{id}',[MainPagesController::class, 'update'])->name('admin.main.update');
@@ -48,6 +48,13 @@ Route::get('admin/portfolios/list', [PortfolioPagesController::class, 'list'])->
 Route::get('/about/portfolios/{id}',[PortfolioPagesController::class, 'edit'])->name('admin.portfolios.edit');
 Route::post('/about/portfolios/{id}', [PortfolioPagesController::class, 'update'])->name('admin.portfolios.update');
 Route::delete('/about/portfolios/{id}', [PortfolioPagesController::class, 'destroy'])->name('admin.portfolios.destroy');
+
+Route::get('/admin/contact/create', [ContactFormController::class, 'create'])->name('admin.contact.create');
+Route::put('/admin/contact/store', [ContactFormController::class, 'storeemail'])->name('admin.contact.storeemail');
+Route::get('admin/contact/list', [ContactFormController::class, 'list'])->name('admin.contact.list');
+Route::get('/about/contact/{id}',[ContactFormController::class, 'edit'])->name('admin.contact.edit');
+Route::post('/about/contact/{id}', [ContactFormController::class, 'update'])->name('admin.contact.update');
+Route::delete('/about/contact/{id}', [ContactFormController::class, 'destroy'])->name('admin.contact.destroy');
 
 Route::post('/contact',[ContactFormController::class, 'store'])->name('contact.store');
 

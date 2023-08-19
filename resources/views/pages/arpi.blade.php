@@ -86,11 +86,11 @@
                         </a>
                     </li>
 
-                    {{-- <li class="nav__item">
-              <a href="#services" class="nav__link noSelect">
-                <i class="uil uil-briefcase-alt nav__icon"></i> Services
-              </a>
-            </li> --}}
+                    <li class="nav__item">
+                        <a href="#qualification" class="nav__link noSelect">
+                            <i class="uil uil-briefcase-alt nav__icon"></i> Qualification
+                        </a>
+                    </li>
 
                     <li class="nav__item">
                         <a href="#portfolio" class="nav__link noSelect">
@@ -126,15 +126,12 @@
             <div class="home__container container grid">
                 <div class="home__content grid">
                     <div class="home__social">
-                        <a href="https://www.linkedin.com/in/rawatanimesh/" target="_blank"
+                        <a href="https://www.linkedin.com/in/arpita-saha-467968261/" target="_blank"
                             class="home__social-icon">
                             <i class="uil uil-linkedin-alt"></i>
                         </a>
-                        <a href="https://github.com/rawatanimesh" target="_blank" class="home__social-icon">
+                        <a href="https://github.com/Arpita-1345" target="_blank" class="home__social-icon">
                             <i class="uil uil-github-alt"></i>
-                        </a>
-                        <a href="https://t.me/rawatanimesh" target="_blank" class="home__social-icon">
-                            <i class="uil uil-telegram-alt"></i>
                         </a>
                     </div>
 
@@ -170,8 +167,8 @@
             </div> --}}
 
                     <div class="home__data">
-                        <h1 class="home__title">Hi, I am Arpita</h1>
-                        <h3 class="home__subtitle">Web Developer</h3>
+                        <h1 class="home__title">{{ $main->name }}</h1>
+                        <h3 class="home__subtitle">{{ $main->status }}</h3>
                         <p class="home__description">
                             {{ $main->description }}
                         </p>
@@ -199,19 +196,13 @@
         <span class="section__subtitle">{{ $main->title }}</span>
 
         <div class="about__container container grid">
-            <img src="<?php echo $main->bc_img; ?>" alt="" class="about__image" />
+            <img src="<?php echo $main->bc_img; ?>" alt="Image" height="300" class="about__image" />
 
             <div class="about__data">
                 <p class="about__description">
                     {{ $main->sub_title }}
                 </p>
                 <div>
-                    <ul class="theme-list">
-                        <li><b>From:</b> Bangladesh</li>
-                        <li><b>Lives In:</b> Dhaka,Bangladesh</li>
-                        <li><b>Age:</b> 24</li>
-                        <li><b>Gender:</b> Female</li>
-                    </ul>
 
                     <div class="about__info">
                         <div>
@@ -307,14 +298,15 @@
 
     <!--==================== QUALIFICATOIN ====================-->
 
-    <section class="qualification section">
+    <section class="qualification section" id="qualification">
         <h2 class="section__title">Qualification</h2>
         <span class="section__subtitle">My personal journey</span>
 
         <div class="qualification__container container">
             <div class="qualification__tabs">
                 <div class="qualification__button button--flex qualification__active" data-target="#work">
-                    <i class="uil uil-briefcase-alt qualification__icon"> </i> Work
+                    <i class="uil uil-briefcase-alt qualification__icon"> </i>
+                    Work
                 </div>
 
                 <div class="qualification__button button--flex" data-target="#education">
@@ -322,6 +314,8 @@
                     Education
                 </div>
             </div>
+
+
 
             <div class="qualification__sections">
                 <!--==================== QUALIFICATOIN CONTENT 1====================-->
@@ -343,21 +337,6 @@
                         </div>
                     </div>
 
-                    <!--==================== QUALIFICATOIN 2====================-->
-                    {{-- <div class="qualification__data">
-              <div></div>
-              <div>
-                <span class="qualification__rounder"></span>
-                <span class="qualification__line"></span>
-              </div> 
-              <div>
-                <h3 class="qualification__title">Frontend Developer</h3>
-                <span class="qualification__subtitle"> Mobikasa </span>
-                <div class="qualification__calender">
-                  <i class="uil uil-calendar-alt"></i> 2018-2019
-                </div>
-              </div> 
-            </div --}}
 
                 </div>
 
@@ -383,24 +362,6 @@
                                 </div>
                             </div>
 
-
-                            <!--==================== QUALIFICATOIN 2====================-->
-                            {{-- <div class="qualification__data">
-              <div></div>
-              <div>
-                <span class="qualification__rounder"></span>
-                <!-- <span class="qualification__line"></span> -->
-              </div>
-              <div>
-                <h3 class="qualification__title">HSC,Science</h3>
-                <span class="qualification__subtitle"> Feni Govt College </span>
-                <div class="qualification__calender">
-                  <i class="uil uil-calendar-alt"></i> 2016-2018
-                </div>
-             
-            </div>
-          </div>  --}}
-
                 </div>
                 @endforeach
                 @endif
@@ -420,53 +381,21 @@
 
         <div class="portfolio__container container swiper-container">
             <div class="swiper-wrapper">
-                <!--==================== PORTFOLIO 1====================-->
                 @if (count($portfolios) > 0)
-                @foreach ($portfolios as $portfolio)
-                <div class="portfolio__content grid swiper-slide">
-                    <img src="<?php echo $portfolio->image; ?>" alt="" class="portfolio__img" />
-                    <div class="portfolio__data">
-                        <h3 class="portfolio__title">"<?php echo $portfolio->title1;?>"</h3>
-                        <p class="portfolio__description">
-                            "<?php echo $portfolio->description;?>"
-                        </p>
-                    </div>
-                </div>
+                    @foreach ($portfolios as $portfolio)
+                        <div class="portfolio__content grid swiper-slide">
+                            <img src="<?php echo $portfolio->image; ?>" alt="" class="portfolio__img" />
+                            <div class="portfolio__data">
+                                <h3 class="portfolio__title">"<?php echo $portfolio->title1; ?>"</h3>
+                                <p class="portfolio__description">
+                                    "<?php echo $portfolio->description; ?>"
+                                </p>
+                                <a href="https://github.com/Arpita-1345/laravel_portfolio_project.git"
+                                    class="portfolio__demo-link">view in Github</a>
+                            </div>
+                        </div>
 
-                <!--==================== PORTFOLIO 2====================-->
-                {{-- <div class="portfolio__content grid swiper-slide">
-                    <img src="/assets/img/portfolio/2.jpg" alt=""
-                        class="portfolio__img" />
-                    <div class="portfolio__data">
-                        <h3 class="portfolio__title">AS Grocery Shop</h3>
-                        <p class="portfolio__description">
-                            Create a E-commerce Website using PYTHON,MYSQL, HTML, CSS, PHP, BOOTSTRAP‑5.
-                        </p>
-                    </div>
-                </div> --}}
-
-                <!--==================== PORTFOLIO 3====================-->
-                {{-- <div class="portfolio__content grid swiper-slide">
-                    <img src="/assets/img/portfolio/3.jpg" alt="" class="portfolio__img" />
-                    <div class="portfolio__data">
-                        <h3 class="portfolio__title">Weather App</h3>
-                        <p class="portfolio__description">
-                            Create a Changing Weather app Using PYTHON, MYSQL, HTML, CSS, PHP, BOOTSTRAP‑5
-                        </p>
-                    </div>
-                </div> --}}
-
-
-                {{-- <div class="portfolio__content grid swiper-slide">
-                    <img src="/assets/img/portfolio/4.jpg" alt="" class="portfolio__img" />
-                    <div class="portfolio__data">
-                        <h3 class="portfolio__title">Student Enrollment System</h3>
-                        <p class="portfolio__description">
-                            Create Student Enrollment system using PYTHON, MYSQL, HTML, CSS, DJANGO
-                        </p>
-                    </div>
-                </div> --}}
-                @endforeach
+                    @endforeach
                 @endif
             </div>
 
@@ -519,7 +448,7 @@
 
                     <div>
                         <h3 class="contact__title">Call Me</h3>
-                        <span class="contact__subtitle">+001720337502</span>
+                        <span class="contact__subtitle">{{ $contact->call }}</span>
                     </div>
                 </div>
 
@@ -528,7 +457,7 @@
 
                     <div>
                         <h3 class="contact__title">Email</h3>
-                        <span class="contact__subtitle">sahaarpita602@gmail.com</span>
+                        <span class="contact__subtitle">{{ $contact->email }}</span>
                     </div>
                 </div>
 
@@ -537,7 +466,7 @@
 
                     <div>
                         <h3 class="contact__title">Location</h3>
-                        <span class="contact__subtitle">Dhaka,Bangladesh</span>
+                        <span class="contact__subtitle">{{ $contact->location }}</span>
                     </div>
                 </div>
             </div>
@@ -565,10 +494,33 @@
                 </div>
 
                 <div>
-                    <a href="#" class="button button--flex">
-                        Send Message
-                        <i class="uil uil-message button__icon"></i>
-                    </a>
+                    <input type="submit" name="send message" class="btn mt-5" value="Send Message">
+
+                    <style>
+                        .btn {
+                            display: inline-block;
+                            padding: 10px 20px;
+                            font-size: 16px;
+                            font-weight: bold;
+                            text-align: center;
+                            text-decoration: none;
+                            border-radius: 5px;
+                            background-color: hsl(250, 69%, 61%);
+                            color: #ffffff;
+                            border: none;
+                            cursor: pointer;
+                            transition: background-color 0.3s ease;
+                        }
+
+                        .btn:hover {
+                            background-color: #0056b3;
+                        }
+
+                        .mt-5 {
+                            margin-top: 20px;
+                        }
+                    </style>
+
                 </div>
             </form>
         </div>
@@ -580,7 +532,7 @@
         <div class="footer__bg">
             <div class="footer__container container grid">
                 <div>
-                    <h1 class="footer__title">Animesh</h1>
+                    <h1 class="footer__title">Arpita saha</h1>
                     <span class="footer__subtitle">Web Developer</span>
                 </div>
 
@@ -594,18 +546,15 @@
                 </ul>
 
                 <div class="footer__socials">
-                    <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2Frawatanimesh"
-                        target="_blank" class="footer__social">
+                    <a href="https://www.facebook.com/saha.arpi.7" target="_blank" class="footer__social">
                         <i class="uil uil-facebook-f"></i>
                     </a>
 
-                    <a href="https://www.instagram.com/rawatanimesh/?hl=en" target="_blank" class="footer__social">
+                    <a href=https://www.instagram.com/arpi.saha/ target="_blank" class="footer__social">
                         <i class="uil uil-instagram"></i>
                     </a>
 
-                    <a href="https://twitter.com/rawataniimesh?lang=en" target="_blank" class="footer__social">
-                        <i class="uil uil-twitter-alt"></i>
-                    </a>
+
                 </div>
             </div>
 

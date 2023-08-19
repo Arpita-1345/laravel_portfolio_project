@@ -12,6 +12,8 @@ class Main extends Model
     protected $fillable = [
         'title',
         'sub_title',
+        'name',
+        'status',
         'bc_img',
         'description',
         'years',

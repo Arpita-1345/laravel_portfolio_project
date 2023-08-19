@@ -37,6 +37,8 @@ class MainPagesController extends Controller
          $this->validate($request,[
             'title'=>'required|string',
             'sub_title'=>'required|string',
+            'name'=>'required|string',
+            'status'=>'required|string',
             'description' => 'required|string',
             'years'=>'required|integer',
             'projects'=>'required|integer',
@@ -46,6 +48,8 @@ class MainPagesController extends Controller
         $main = Main::first();
         $main->title = $request->title;
         $main->sub_title = $request->sub_title;
+        $main->name = $request->name;
+        $main->status = $request->status;
         $main ->description = $request->description;
         $main->years = $request->years;
         $main->projects = $request->projects;

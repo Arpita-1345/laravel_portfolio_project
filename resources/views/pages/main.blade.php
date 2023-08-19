@@ -29,6 +29,14 @@
                             <label for="sub title"><h4>sub title</h4></label>
                             <input type="text" class="form-control" id="sub title" name="sub title" value="{{ $main->sub_title}}" >
                         </div>
+                        <div class="mb-5">
+                            <label for="sub title"><h4>name</h4></label>
+                            <input type="text" class="form-control" id="name" name="name" value="{{ $main->name}}" >
+                        </div>
+                        <div class="mb-5">
+                            <label for="sub title"><h4>status</h4></label>
+                            <input type="text" class="form-control" id="status" name="status" value="{{ $main->status}}" >
+                        </div>
                         <div>
                             <div class="mb-5">
                             <label for="years"><h4>Years</h4></label>
